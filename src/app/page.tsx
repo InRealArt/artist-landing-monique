@@ -1,6 +1,8 @@
 import Header from '@/components/Header';
 import HeroSection from '@/components/HeroSection';
 import AboutSection from '@/components/AboutSection';
+import PortraitSection from '@/components/PortraitSection';
+import InRealArtStats from '@/components/InRealArtStats';
 import ArtworkGallery from '@/components/ArtworkGallery';
 import ContactSection from '@/components/ContactSection';
 import { defaultArtistData } from '@/lib/artistData';
@@ -21,13 +23,17 @@ export default function Home() {
         <AboutSection artistData={defaultArtistData} />
       </div>
 
+      <PortraitSection artistData={defaultArtistData} />
+
+      <InRealArtStats />
+
       <div id="contact">
         <ContactSection artistData={defaultArtistData} />
       </div>
 
       {/* Footer */}
       <footer className="bg-gray-900 py-12 px-4">
-        <div className="max-w-7xl mx-auto text-center">
+        <div className="max-w-[80%] md:max-w-7xl mx-auto text-center">
           <div className="mb-8">
             <h3 className="text-2xl font-bold mb-4 text-white">
               {defaultArtistData.fullName}

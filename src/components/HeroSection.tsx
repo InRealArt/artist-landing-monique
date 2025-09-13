@@ -22,7 +22,8 @@ export default function HeroSection({ artistData }: HeroSectionProps) {
       </div>
 
       {/* Artist Card Overlay on Bottom Left */}
-      <div className="relative rounded-lg z-10 w-full max-w-md ml-8 lg:ml-16 mb-16 max-h-cardSize h-[600px]">
+      <div className="relative z-10 max-w-[80%] md:max-w-7xl">
+        <div className="relative rounded-lg w-full max-w-md ml-8 lg:ml-16 mb-16 max-h-cardSize h-[600px]">
         {/* Artist Image as Card Background */}
         <div className="absolute inset-0">
           <Image
@@ -53,6 +54,7 @@ export default function HeroSection({ artistData }: HeroSectionProps) {
               {artistData.fullName}
             </h1>
           </div>
+        </div>
         </div>
       </div>
     </section>

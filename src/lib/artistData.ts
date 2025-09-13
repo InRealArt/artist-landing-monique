@@ -21,6 +21,7 @@ export interface ArtistData {
   
   // Images
   profileImage: string;
+  aboutImage: string;
   backgroundImage: string;
   
   // Contact
@@ -61,6 +62,7 @@ export const defaultArtistData: ArtistData = {
   location: "Provence, France",
   
   profileImage: "/images/artist.png",
+  aboutImage: "/images/artist-1.png",
   backgroundImage: "/images/artist-background.png",
   
   email: "contact@moniquelaville.com",
