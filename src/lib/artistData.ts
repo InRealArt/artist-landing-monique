@@ -145,23 +145,23 @@ export const defaultArtistData: ArtistData = {
   artworks: [
     {
       id: "artwork-1",
-      title: "Lavender Fields of Provence",
+      title: "Champs de Lavande de Provence",
       year: 2024,
-      medium: "Oil on Canvas",
+      medium: "Huile sur toile",
       dimensions: "60cm x 80cm",
       image: "/images/artwork-1.jpg",
-      description: "A vibrant impressionistic painting capturing the essence of Provence's famous lavender fields during peak bloom season.",
+      description: "Une peinture impressionniste vibrante capturant l'essence des célèbres champs de lavande de Provence pendant la saison de floraison.",
       price: "€2,500",
       available: true,
     },
     {
       id: "artwork-2",
-      title: "Sunflower Valley",
+      title: "Vallée des Tournesols",
       year: 2024,
-      medium: "Oil on Canvas",
+      medium: "Huile sur toile",
       dimensions: "50cm x 70cm",
       image: "/images/artwork-2.jpg",
-      description: "An energetic composition featuring golden sunflowers swaying in the summer breeze, with a rustic farmhouse in the distance.",
+      description: "Une composition énergique mettant en scène des tournesols dorés se balançant dans la brise estivale, avec une ferme rustique au loin.",
       price: "€2,200",
       available: true,
     },
@@ -170,24 +170,24 @@ export const defaultArtistData: ArtistData = {
   featuredArtworks: ["artwork-1", "artwork-2"],
   
   specialties: [
-    "Impressionistic Landscapes",
-    "Nature Studies",
-    "Rural French Scenes",
-    "Oil Painting",
-    "Color Theory"
+    "Paysages Impressionnistes",
+    "Études de Nature",
+    "Scènes Rurales Françaises",
+    "Peinture à l'Huile",
+    "Théorie des Couleurs"
   ],
   
   achievements: [
-    "Featured in Galerie des Beaux-Arts, Paris",
-    "Winner of Provence Art Festival 2023",
-    "Exhibited in 15+ galleries across France",
-    "Art instructor for 10+ years"
+    "Exposée à la Galerie des Beaux-Arts, Paris",
+    "Lauréate du Festival d'Art de Provence 2023",
+    "Exposée dans plus de 15 galeries à travers la France",
+    "Professeure d'art pendant plus de 10 ans"
   ],
   
   exhibitions: [
-    "Solo Exhibition - Galerie Provence, Aix-en-Provence (2024)",
-    "Group Show - Salon des Artistes, Paris (2023)",
-    "Art Fair - Foire d'Art Contemporain, Nice (2023)"
+    "Exposition Solo - Galerie Provence, Aix-en-Provence (2024)",
+    "Exposition Collective - Salon des Artistes, Paris (2023)",
+    "Foire d'Art - Foire d'Art Contemporain, Nice (2023)"
   ],
   
   content: {
@@ -200,7 +200,7 @@ export const defaultArtistData: ArtistData = {
     aboutBirthInfo: "Né en 1950 - France",
     aboutDescription: "L'artiste Monique Laville fait partie de la communauté InRealArt est une artiste côtée I-CAC & ARTPRICE",
     aboutQuestion: "Ton atelier : laboratoire, refuge, chaos ?",
-    aboutQuote: "Mon atelier est le refuge où je peux m'exprimer librement sur ma peinture, mais pas uniquement. Je retrace \"en écriture\" ma vie depuis mon enfance d'aussi loin que remontent mes souvenirs (mais cela reste personnel).",
+    aboutQuote: "Mon atelier est le refuge où je peux m'exprimer librement sur ma peinture, mais pas uniquement. Je retrace \"en écriture\" ma vie depuis mon enfance d'aussi loin que remontent mes souvenirs.",
     aboutQuoteAuthor: "- Monique Laville , Interview pour InRealArt Juin 2025",
     aboutTags: ["Peintre", "Peinture au couteau"],
     
@@ -244,7 +244,7 @@ export const defaultArtistData: ArtistData = {
     // Gallery Section
     galleryMainTitle: "Catalogue InReal Art 2025",
     gallerySubtitle: "& Monique Laville",
-    galleryDescription: "Découvrez les oeuvres exposées lors de art3f Monaco",
+    galleryDescription: "Découvrez les œuvres exposées lors de art3f Monaco",
     
     // Stats Section
     statsTitle: "Le catalogue InRealArt c'est",
@@ -282,7 +282,7 @@ export const defaultArtistData: ArtistData = {
     // Footer
     footer: {
       artistDescription: "Artiste contemporaine française spécialisée dans les paysages impressionnistes de Provence.",
-      inrealArtDescription: "Marketplace d'art contemporain spécialisé dans la promotion d'artistes émergents et établis.",
+      inrealArtDescription: "Catalyseur d'art, de Culture & de Patrimoine",
       contactLabels: {
         email: "Email",
         phone: "Téléphone",
