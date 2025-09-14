@@ -130,7 +130,7 @@ export async function POST(request: NextRequest) {
       `,
       attachments: [
         {
-          filename: 'catalogue.pdf',
+          filename: 'Catalogue Monique Laville & InRealArt 2025.pdf',
           path: pdfPath
         }
       ]
