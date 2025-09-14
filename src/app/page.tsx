@@ -70,10 +70,6 @@ export default function Home() {
                 Contact
               </h3>
               <div className="flex flex-col gap-3 space-y-3 text-gray-300 text-sm font-montserrat">
-                <div>
-                  <p className="font-semibold">{defaultArtistData.content.footer.contactLabels.email}</p>
-                  <p>{defaultArtistData.email}</p>
-                </div>
                 <div className="flex justify-center md:justify-end space-x-4">
                   {/* LinkedIn */}
                   {defaultArtistData.socialMedia?.linkedin && (
