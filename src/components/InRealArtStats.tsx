@@ -8,7 +8,7 @@ interface InRealArtStatsProps {
 
 export default function InRealArtStats({ artistData }: InRealArtStatsProps) {
   return (
-    <section className="py-20 px-4 bg-gray-50">
+    <section className="py-12 md:py-20 px-4 bg-gray-50">
       <div className="max-w-[80%] md:max-w-7xl mx-auto">
         {/* Title */}
         <h2 className="text-3xl md:text-4xl font-bold text-gray-900 font-bricolage mb-12">

@@ -17,7 +17,7 @@ export default function ArtworkGallery({ artistData }: ArtworkGalleryProps) {
 
   return (
     <>
-      <section className="py-20 px-4 bg-gray-50">
+      <section className="py-12 md:py-20 px-4 bg-gray-50">
         <div className="max-w-[80%] md:max-w-7xl mx-auto">
                 {/* Exhibition Header */}
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
