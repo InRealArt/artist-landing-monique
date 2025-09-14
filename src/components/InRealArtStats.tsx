@@ -16,7 +16,7 @@ export default function InRealArtStats({ artistData }: InRealArtStatsProps) {
         </h2>
 
         {/* Stats Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {artistData.content.stats.map((stat, index) => (
             <div key={index} className="bg-white border border-gray-300 rounded-lg p-6 text-center shadow-lg">
               <div className="text-4xl md:text-5xl font-bold text-gray-900 font-bricolage mb-3">

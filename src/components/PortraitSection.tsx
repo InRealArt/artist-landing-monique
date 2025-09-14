@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import { ArtistData } from '@/lib/artistData';
+import ExpandableSection from './ExpandableSection';
 
 interface PortraitSectionProps {
   artistData: ArtistData;
@@ -36,40 +37,34 @@ export default function PortraitSection({ artistData }: PortraitSectionProps) {
               </p>
             </div>
 
-            {/* Prix */}
-            <div>
-              <h3 className="text-xl font-bold text-gray-900 font-bricolage mb-4">
-                Prix
-              </h3>
-              <div className="space-y-2">
-                {artistData.content.awards.map((award, index) => (
-                  <p key={index} className="text-gray-700 font-montserrat text-sm">{award}</p>
-                ))}
-              </div>
-            </div>
+            {/* Expandable Sections */}
+            <div className="space-y-4">
+              {/* Prix */}
+              <ExpandableSection title="Prix">
+                <div className="space-y-2">
+                  {artistData.content.awards.map((award, index) => (
+                    <p key={index} className="text-gray-700 font-montserrat text-sm">{award}</p>
+                  ))}
+                </div>
+              </ExpandableSection>
 
-            {/* Exposition solo */}
-            <div>
-              <h3 className="text-xl font-bold text-gray-900 font-bricolage mb-4">
-                Exposition solo
-              </h3>
-              <div className="space-y-2">
-                {artistData.content.soloExhibitions.map((exhibition, index) => (
-                  <p key={index} className="text-gray-700 font-montserrat text-sm">{exhibition}</p>
-                ))}
-              </div>
-            </div>
+              {/* Exposition solo */}
+              <ExpandableSection title="Exposition solo">
+                <div className="space-y-2">
+                  {artistData.content.soloExhibitions.map((exhibition, index) => (
+                    <p key={index} className="text-gray-700 font-montserrat text-sm">{exhibition}</p>
+                  ))}
+                </div>
+              </ExpandableSection>
 
-            {/* Publications */}
-            <div>
-              <h3 className="text-xl font-bold text-gray-900 font-bricolage mb-4">
-                Publications
-              </h3>
-              <div className="space-y-2">
-                {artistData.content.publications.map((publication, index) => (
-                  <p key={index} className="text-gray-700 font-montserrat text-sm">{publication}</p>
-                ))}
-              </div>
+              {/* Publications */}
+              <ExpandableSection title="Publications">
+                <div className="space-y-2">
+                  {artistData.content.publications.map((publication, index) => (
+                    <p key={index} className="text-gray-700 font-montserrat text-sm">{publication}</p>
+                  ))}
+                </div>
+              </ExpandableSection>
             </div>
           </div>
         </div>

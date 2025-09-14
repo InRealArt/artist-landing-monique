@@ -31,7 +31,7 @@ export interface ArtistData {
   socialMedia?: {
     instagram?: string;
     facebook?: string;
-    twitter?: string;
+    pinterest?: string;
     linkedin?: string;
   };
   
@@ -56,6 +56,7 @@ export interface ArtistData {
     aboutDescription: string;
     aboutQuestion: string;
     aboutQuote: string;
+    aboutQuoteAuthor: string;
     aboutTags: string[];
     
     // Portrait Section
@@ -131,12 +132,14 @@ export const defaultArtistData: ArtistData = {
   aboutImage: "/images/artist-1.png",
   backgroundImage: "/images/artist-background.png",
   
-  email: "contact@moniquelaville.com",
+  email: "teaminrealart@gmail.com",
   phone: "+33 6 12 34 56 78",
   website: "www.moniquelaville.com",
   socialMedia: {
-    instagram: "@moniquelaville_art",
-    facebook: "MoniqueLavilleArt",
+    instagram: "@inrealartgallery/",
+    linkedin: "company/inrealart/posts/?feedView=all",
+    facebook: "InRealArt/",
+    pinterest: "teaminrealart/",
   },
   
   artworks: [
@@ -198,6 +201,7 @@ export const defaultArtistData: ArtistData = {
     aboutDescription: "L'artiste Monique Laville fait partie de la communauté InRealArt est une artiste côtée I-CAC & ARTPRICE",
     aboutQuestion: "Ton atelier : laboratoire, refuge, chaos ?",
     aboutQuote: "Mon atelier est le refuge où je peux m'exprimer librement sur ma peinture, mais pas uniquement. Je retrace \"en écriture\" ma vie depuis mon enfance d'aussi loin que remontent mes souvenirs (mais cela reste personnel).",
+    aboutQuoteAuthor: "- Monique Laville , Interview pour InRealArt Juin 2025",
     aboutTags: ["Peintre", "Peinture au couteau"],
     
     // Portrait Section
@@ -250,21 +254,17 @@ export const defaultArtistData: ArtistData = {
         description: "Artistes sélectionnés dans notre catalogue global"
       },
       {
-        number: "< 100",
+        number: "200+",
         description: "Œuvres soigneusement choisies pour embellir votre collection."
       },
       {
-        number: "500 +",
-        description: "Transactions réalisées sur notre marketplace"
-      },
-      {
-        number: "50 %",
-        description: "de nos artistes figurent dans le classement 50-60 de l'ICAC."
+        number: "100%",
+        description: "De nos artistes satisfaits de leurs accompagnements"
       }
     ],
     
     // Catalog Section
-    catalogTitle: "Catalogue Paris Artshow",
+    catalogTitle: "Catalogue art3f MONACO",
     catalogDescription: "Explorez une collection unique d'œuvres toutes plus originales les unes que les autres.",
     catalogForm: {
       nameLabel: "Nom*",

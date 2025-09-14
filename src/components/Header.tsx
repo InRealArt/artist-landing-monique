@@ -65,7 +65,7 @@ export default function Header({ artistData: _artistData }: HeaderProps) {
               onClick={scrollToContact}
               className="bg-[#6052FF] text-white px-6 py-2 rounded-lg hover:bg-[#4a3bcc] transition-colors font-montserrat flex items-center space-x-2"
             >
-              <span>Télécharger le catalogue</span>
+              <span>Téléchargez le catalogue</span>
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
               </svg>
@@ -109,7 +109,7 @@ export default function Header({ artistData: _artistData }: HeaderProps) {
                 onClick={scrollToContact}
                 className="w-full text-left px-3 py-2 bg-[#6052FF] text-white rounded-lg hover:bg-[#4a3bcc] transition-colors font-montserrat flex items-center justify-between"
               >
-                <span>Télécharger le catalogue</span>
+                <span>Téléchargez le catalogue</span>
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                 </svg>

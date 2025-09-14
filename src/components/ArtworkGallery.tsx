@@ -34,10 +34,8 @@ export default function ArtworkGallery({ artistData }: ArtworkGalleryProps) {
                   {/* Right Box - Event Details */}
                   <div className="bg-white p-8 rounded-lg shadow-lg">
                     <div className="space-y-3 text-gray-700 font-montserrat">
-                      <p><span className="font-semibold">Quand:</span> du 19 au 22 Janvier 2025</p>
-                      <p><span className="font-semibold">Où:</span> au Grand Palais, à Paris</p>
-                      <p>Du mercredi au vendredi de 11h à 20h.</p>
-                      <p>Samedi de 10H à 18H</p>
+                      <p><span className="font-semibold">Quand:</span> du 19 au 21 Septembre 2025</p>
+                      <p><span className="font-semibold">Où:</span> au Château de Fontvielle, à Monaco</p>
                     </div>
                   </div>
                 </div>

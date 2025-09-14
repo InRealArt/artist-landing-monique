@@ -39,9 +39,12 @@ export default function AboutSection({ artistData }: AboutSectionProps) {
             <h3 className="text-xl font-bold text-gray-900 font-bricolage">
               {artistData.content.aboutQuestion}
             </h3>
-            <blockquote className="text-gray-700 font-montserrat font-bold leading-relaxed italic text-3xl">
+            <blockquote className="text-gray-700 font-montserrat font-bold leading-relaxed italic text-2xl">
               «{artistData.content.aboutQuote}»
             </blockquote>
+            <p className="text-gray-700 font-montserrat font-bold leading-relaxed italic text-sm">
+              {artistData.content.aboutQuoteAuthor}
+            </p>
           </div>
 
           {/* Right Section - Artist Portrait */}
