@@ -1,6 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { sendEmail } from '@/actions/emailActions';
 import { defaultArtistData } from '@/lib/artistData';
+import path from 'path';
+import fs from 'fs';
 
 export async function POST(request: NextRequest) {
   try {
@@ -61,6 +63,19 @@ export async function POST(request: NextRequest) {
       `
     };
 
+    // Check if PDF file exists
+    const pdfPath = path.join(process.cwd(), 'public', 'Catalogue.pdf');
+    console.log('📁 PDF Path:', pdfPath);
+    console.log('📁 File exists:', fs.existsSync(pdfPath));
+    
+    if (!fs.existsSync(pdfPath)) {
+      console.error('❌ PDF file not found at:', pdfPath);
+      return NextResponse.json(
+        { error: 'PDF file not found' },
+        { status: 500 }
+      );
+    }
+
     // 2. Email template for user catalog
     const userCatalogData = {
       to: email,
@@ -116,7 +131,7 @@ export async function POST(request: NextRequest) {
       attachments: [
         {
           filename: 'Catalogue.pdf',
-          path: './public/Catalogue.pdf'
+          path: pdfPath
         }
       ]
     };

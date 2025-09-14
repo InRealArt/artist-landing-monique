@@ -288,7 +288,7 @@ export const defaultArtistData: ArtistData = {
         phone: "Téléphone",
         location: "Localisation"
       },
-      copyright: "© 2024 Monique Laville & InRealArt. Tous droits réservés.",
+      copyright: "© 2025 Monique Laville & InRealArt. Tous droits réservés.",
       legalLinks: {
         privacy: "Politique de confidentialité",
         terms: "Conditions d'utilisation"
