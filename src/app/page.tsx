@@ -25,7 +25,9 @@ export default function Home() {
 
       <PortraitSection artistData={defaultArtistData} />
 
-      <InRealArtStats artistData={defaultArtistData} />
+      <div id="stats">
+        <InRealArtStats artistData={defaultArtistData} />
+      </div>
 
       <div id="contact">
         <CatalogSection artistData={defaultArtistData} />

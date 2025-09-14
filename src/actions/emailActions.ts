@@ -73,7 +73,7 @@ async function sendContactEmail(data: {
   phone: string
 }): Promise<{ success: boolean; message: string }> {
   try {
-    const brevoApiKey = process.env.BREVO_API_KEY
+    const brevoApiKey = process.env.NEXT_PUBLIC_BREVO_API_KEY || process.env.BREVO_API_KEY
 
     if (!brevoApiKey) {
       console.error('❌ Brevo API key missing')
@@ -314,17 +314,65 @@ export async function sendEmail(emailData: {
   subject: string;
   html: string;
   attachments?: Array<{ filename: string; path: string }>;
-}): Promise<{ success: boolean; message: string }> {
+}): Promise<{ success: boolean; message: string; messageId?: string }> {
   try {
-    const brevoApiKey = process.env.BREVO_API_KEY
+    const brevoApiKey = process.env.NEXT_PUBLIC_BREVO_API_KEY || process.env.BREVO_API_KEY
 
     if (!brevoApiKey) {
       console.error('❌ Brevo API key missing')
+      console.error('❌ Available env vars:', Object.keys(process.env).filter(key => key.includes('BREVO')))
       return {
         success: false,
-        message: 'Email service configuration error'
+        message: 'Email service configuration error - API key missing'
       }
     }
+
+    console.log('✅ Brevo API key found:', brevoApiKey.substring(0, 10) + '...')
+
+    // Prepare email payload
+    const emailPayload: {
+      sender: { name: string; email: string };
+      to: Array<{ email: string }>;
+      subject: string;
+      htmlContent: string;
+      replyTo?: { email: string };
+      attachment?: Array<{ content: string; name: string }>;
+    } = {
+      sender: {
+        name: "InRealArt",
+        email: "teaminrealart@gmail.com"
+      },
+      to: [{ email: emailData.to }],
+      subject: emailData.subject,
+      htmlContent: emailData.html,
+      replyTo: {
+        email: "teaminrealart@gmail.com"
+      }
+    }
+
+    // Add attachments if provided
+    if (emailData.attachments && emailData.attachments.length > 0) {
+      try {
+        const fs = await import('fs');
+        const path = await import('path');
+        
+        emailPayload.attachment = emailData.attachments.map(attachment => {
+          const filePath = path.resolve(process.cwd(), attachment.path);
+          const fileContent = fs.readFileSync(filePath, 'base64');
+          return {
+            content: fileContent,
+            name: attachment.filename
+          };
+        });
+      } catch (attachmentError) {
+        console.error('❌ Error attaching files:', attachmentError);
+        // Continue without attachments if file reading fails
+      }
+    }
+
+    console.log('📧 Sending email to:', emailData.to)
+    console.log('📧 Email subject:', emailData.subject)
+    console.log('📧 Has attachments:', emailData.attachments ? emailData.attachments.length : 0)
 
     const response = await fetch('https://api.brevo.com/v3/smtp/email', {
       method: 'POST',
@@ -333,29 +381,31 @@ export async function sendEmail(emailData: {
         'Content-Type': 'application/json',
         'api-key': brevoApiKey
       },
-      body: JSON.stringify({
-        sender: {
-          name: "InRealArt",
-          email: "noreply@inrealart.com"
-        },
-        to: [{ email: emailData.to }],
-        subject: emailData.subject,
-        htmlContent: emailData.html
-      })
+      body: JSON.stringify(emailPayload)
     })
+
+    console.log('📧 Response status:', response.status)
+    console.log('📧 Response ok:', response.ok)
 
     if (!response.ok) {
       const errorData = await response.json()
       console.error('❌ Brevo API error:', errorData)
+      console.error('❌ Email payload:', JSON.stringify(emailPayload, null, 2))
       return {
         success: false,
-        message: 'Failed to send email'
+        message: `Failed to send email: ${errorData.message || 'Unknown error'}`
       }
     }
 
+    const responseData = await response.json()
+    console.log('✅ Email sent successfully:', responseData)
+    console.log('📧 Message ID:', responseData.messageId)
+    console.log('📧 Full response:', JSON.stringify(responseData, null, 2))
+
     return {
       success: true,
-      message: 'Email sent successfully'
+      message: 'Email sent successfully',
+      messageId: responseData.messageId
     }
 
   } catch (error) {

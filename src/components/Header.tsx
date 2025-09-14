@@ -8,13 +8,21 @@ interface HeaderProps {
   artistData: ArtistData;
 }
 
-export default function Header({ artistData }: HeaderProps) {
+export default function Header({ artistData: _artistData }: HeaderProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const scrollToContact = () => {
     const contactSection = document.getElementById('contact');
     if (contactSection) {
       contactSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const scrollToStats = () => {
+    const statsSection = document.getElementById('stats');
+    if (statsSection) {
+      statsSection.scrollIntoView({ behavior: 'smooth' });
+      setIsMenuOpen(false); // Close mobile menu
     }
   };
 
@@ -37,16 +45,16 @@ export default function Header({ artistData }: HeaderProps) {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            <a href="https://example.com/exposition" className="text-gray-700 hover:text-purple-600 transition-colors font-montserrat">
+            <a href="https://www.biancoscuro.it/site?mailpoet_router&endpoint=track&action=click&data=WyI5MDM4IiwiZjA3ZGFhIiwiMTYxMyIsIjI4OGYyMTViNDhkZSIsZmFsc2Vd" className="text-gray-700 hover:text-purple-600 transition-colors font-montserrat">
               Exposition
             </a>
-            <a href="#about" className="text-gray-700 hover:text-purple-600 transition-colors font-montserrat">
+            <a target="_blank" href="https://www.inrealart.com/artists/monique-laville" className="text-gray-700 hover:text-purple-600 transition-colors font-montserrat">
               Artiste
             </a>
-            <a href="https://example.com/pourquoi" className="text-gray-700 hover:text-purple-600 transition-colors font-montserrat">
+            <button onClick={scrollToStats} className="text-gray-700 hover:text-purple-600 transition-colors font-montserrat">
               Pourquoi nous ?
-            </a>
-            <a href="https://example.com/temoignage" className="text-gray-700 hover:text-purple-600 transition-colors font-montserrat">
+            </button>
+            <a target="_blank" href="https://www.inrealart.com/joinInRealArt/artists" className="text-gray-700 hover:text-purple-600 transition-colors font-montserrat">
               Témoignage
             </a>
           </nav>
@@ -91,9 +99,9 @@ export default function Header({ artistData }: HeaderProps) {
               <a href="#about" className="block px-3 py-2 text-gray-700 hover:text-purple-600 transition-colors font-montserrat">
                 Artiste
               </a>
-              <a href="https://example.com/pourquoi" className="block px-3 py-2 text-gray-700 hover:text-purple-600 transition-colors font-montserrat">
+              <button onClick={scrollToStats} className="block w-full text-left px-3 py-2 text-gray-700 hover:text-purple-600 transition-colors font-montserrat">
                 Pourquoi nous ?
-              </a>
+              </button>
               <a href="https://example.com/temoignage" className="block px-3 py-2 text-gray-700 hover:text-purple-600 transition-colors font-montserrat">
                 Témoignage
               </a>

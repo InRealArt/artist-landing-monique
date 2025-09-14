@@ -15,12 +15,12 @@ export default function ContactSection({ artistData }: ContactSectionProps) {
           {/* Left side - Contact Info */}
           <div>
             <h2 className="text-4xl md:text-5xl font-bold mb-8 text-gray-900">
-              Let's Connect
+              Let&apos;s Connect
             </h2>
             
             <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-              Interested in commissioning a piece, purchasing artwork, or learning more about {artistData.name}'s work? 
-              We'd love to hear from you.
+              Interested in commissioning a piece, purchasing artwork, or learning more about {artistData.name}&apos;s work? 
+              We&apos;d love to hear from you.
             </p>
 
             {/* Contact Details */}

@@ -32,7 +32,7 @@ export default function ContactForm() {
       } else {
         toast.error(result.message)
       }
-    } catch (error) {
+    } catch (_error) {
       toast.error('An unexpected error occurred. Please try again.')
     } finally {
       setIsSubmitting(false)

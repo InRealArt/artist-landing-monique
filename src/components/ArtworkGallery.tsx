@@ -1,6 +1,5 @@
 'use client';
 
-import Image from 'next/image';
 import { useState } from 'react';
 import { ArtistData, Artwork } from '@/lib/artistData';
 import ArtworkCard from './ArtworkCard';
@@ -10,7 +9,7 @@ interface ArtworkGalleryProps {
 }
 
 export default function ArtworkGallery({ artistData }: ArtworkGalleryProps) {
-  const [selectedArtwork, setSelectedArtwork] = useState<Artwork | null>(null);
+  const [_selectedArtwork, _setSelectedArtwork] = useState<Artwork | null>(null);
 
   const featuredArtworks = artistData.artworks.filter(artwork =>
     artistData.featuredArtworks.includes(artwork.id)
