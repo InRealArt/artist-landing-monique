@@ -26,13 +26,13 @@ export default function PortraitSection({ artistData }: PortraitSectionProps) {
 
           {/* Right Section - Artist Information */}
           <div className="space-y-8">
-            {/* Portrait de Monique Laville */}
+            {/* Portrait */}
             <div>
               <h2 className="text-2xl md:text-3xl font-bold text-gray-900 font-bricolage mb-4">
-                Portrait de Monique Laville
+                {artistData.content.portraitTitle}
               </h2>
               <p className="text-gray-700 font-montserrat leading-relaxed">
-                Monique Laville est une artiste française dont les œuvres ont été exposées nationalement et internationalement dans des pays tels que le Canada, la Chine, l'Italie, le Portugal, l'Autriche, Monaco, le Brésil, les États-Unis et le Royaume-Uni. Ses œuvres ont également été présentées dans des publications prestigieuses comme Nice Matin, Magazine Marianne Maison, et ART EN VOYAGE. Ses tableaux sont souvent impressionnistes, principalement à l'huile sur toile, créés au couteau pour leur donner une texture et une expressivité uniques.
+                {artistData.content.portraitDescription}
               </p>
             </div>
 
@@ -42,16 +42,9 @@ export default function PortraitSection({ artistData }: PortraitSectionProps) {
                 Prix
               </h3>
               <div className="space-y-2">
-                <p className="text-gray-700 font-montserrat text-sm">2022: BIENNALE INTERNAZIONALE - Nominé- Monte Carlo, Monaco</p>
-                <p className="text-gray-700 font-montserrat text-sm">2022: Award Palma d'Oro per l'Arte - Nominé- SAN REMO, Italie</p>
-                <p className="text-gray-700 font-montserrat text-sm">2022: Art Museum V° Biennale - Nominé- VENISE, Italie</p>
-                <p className="text-gray-700 font-montserrat text-sm">2019: ART SHOW PARIS II Art et Design - Nominé- PARIS, France</p>
-                <p className="text-gray-700 font-montserrat text-sm">2019: CULTURA IDENTIA- Plaquette 3ième Prix du Jury- LA SPEZIA, Italie</p>
-                <p className="text-gray-700 font-montserrat text-sm">2017: INTERNATIONAL CONTEMPORARY ART SALON - Nominé- VIENNE, Autriche</p>
-                <p className="text-gray-700 font-montserrat text-sm">2015: FEDERATION NATIONALE DE LA CULTURE FRANCAISE - Nominé- Lauréat- PARIS, France</p>
-                <p className="text-gray-700 font-montserrat text-sm">2014: ArtMajeur Awards - Nominé- CLAPIERS, France</p>
-                <p className="text-gray-700 font-montserrat text-sm">2014: Exposition d'Art Contemporain- Plaquette- FLORENCE, Italie</p>
-                <p className="text-gray-700 font-montserrat text-sm">2014: LA PALME D'OR POUR L'ART - Nominé- MONTE CARLO, Monaco</p>
+                {artistData.content.awards.map((award, index) => (
+                  <p key={index} className="text-gray-700 font-montserrat text-sm">{award}</p>
+                ))}
               </div>
             </div>
 
@@ -61,15 +54,9 @@ export default function PortraitSection({ artistData }: PortraitSectionProps) {
                 Exposition solo
               </h3>
               <div className="space-y-2">
-                <p className="text-gray-700 font-montserrat text-sm">2017: TABLINUM / VILLA CARLOTTA - LAC DE COME, Italie</p>
-                <p className="text-gray-700 font-montserrat text-sm">2016: Galleria La Pigna / GALERIE DU VATICAN - ROME, Italie</p>
-                <p className="text-gray-700 font-montserrat text-sm">2015: Mostra personale / CAFFE IL GIUBBE ROSSO - FLORENCE, Italie</p>
-                <p className="text-gray-700 font-montserrat text-sm">2011: ATELIER DU 2 / GALERIE - ESSOYES, France</p>
-                <p className="text-gray-700 font-montserrat text-sm">2010: EXCEPTIONNAL EUROPEAN ART EXHIBITION / WALDORF PALACE - LONDRES, Royaume-Uni</p>
-                <p className="text-gray-700 font-montserrat text-sm">2009: ART EN VOYAGE / Museum de TIANJIN - TIANJIN, Chine</p>
-                <p className="text-gray-700 font-montserrat text-sm">2009: CONTEMPORY INTERNATIONAL ART II / Museum de MIAMI FLORIDE - MIAMI, États-Unis</p>
-                <p className="text-gray-700 font-montserrat text-sm">2008: GALERIE STYL'ART / GALERIE - GAILLON HAUTE NORMANDIE, France</p>
-                <p className="text-gray-700 font-montserrat text-sm">2006: Galerie Camila Klein / Galerie - CURITIBA, Brésil</p>
+                {artistData.content.soloExhibitions.map((exhibition, index) => (
+                  <p key={index} className="text-gray-700 font-montserrat text-sm">{exhibition}</p>
+                ))}
               </div>
             </div>
 
@@ -79,14 +66,9 @@ export default function PortraitSection({ artistData }: PortraitSectionProps) {
                 Publications
               </h3>
               <div className="space-y-2">
-                <p className="text-gray-700 font-montserrat text-sm">2019: ASSOCIATION LORD THOMAS- Article</p>
-                <p className="text-gray-700 font-montserrat text-sm">2019: ART SHOW PARIS- Article</p>
-                <p className="text-gray-700 font-montserrat text-sm">2018: Editions R.E.G.A.R.D.S. Encyclopédie- Article</p>
-                <p className="text-gray-700 font-montserrat text-sm">2017: WINTER SALON- Article</p>
-                <p className="text-gray-700 font-montserrat text-sm">2017: Salon Artistique Le Puy-En-Velay- Article</p>
-                <p className="text-gray-700 font-montserrat text-sm">2015: LES SALONS D'OPEL- Article</p>
-                <p className="text-gray-700 font-montserrat text-sm">2015: Nice Matin- Article</p>
-                <p className="text-gray-700 font-montserrat text-sm">2015: RAI 3 ROME- Interview</p>
+                {artistData.content.publications.map((publication, index) => (
+                  <p key={index} className="text-gray-700 font-montserrat text-sm">{publication}</p>
+                ))}
               </div>
             </div>
           </div>

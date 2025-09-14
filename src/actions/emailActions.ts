@@ -55,7 +55,7 @@ export async function submitContactForm(formData: FormData) {
     if (error instanceof z.ZodError) {
       return {
         success: false,
-        message: error.errors[0].message,
+        message: error.issues[0].message,
       }
     }
 
@@ -306,4 +306,63 @@ function createUserEmailTemplate(data: {
 </body>
 </html>
   `
+}
+
+// Export sendEmail function for catalog API
+export async function sendEmail(emailData: {
+  to: string;
+  subject: string;
+  html: string;
+  attachments?: Array<{ filename: string; path: string }>;
+}): Promise<{ success: boolean; message: string }> {
+  try {
+    const brevoApiKey = process.env.BREVO_API_KEY
+
+    if (!brevoApiKey) {
+      console.error('❌ Brevo API key missing')
+      return {
+        success: false,
+        message: 'Email service configuration error'
+      }
+    }
+
+    const response = await fetch('https://api.brevo.com/v3/smtp/email', {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+        'api-key': brevoApiKey
+      },
+      body: JSON.stringify({
+        sender: {
+          name: "InRealArt",
+          email: "noreply@inrealart.com"
+        },
+        to: [{ email: emailData.to }],
+        subject: emailData.subject,
+        htmlContent: emailData.html
+      })
+    })
+
+    if (!response.ok) {
+      const errorData = await response.json()
+      console.error('❌ Brevo API error:', errorData)
+      return {
+        success: false,
+        message: 'Failed to send email'
+      }
+    }
+
+    return {
+      success: true,
+      message: 'Email sent successfully'
+    }
+
+  } catch (error) {
+    console.error('❌ Error sending email:', error)
+    return {
+      success: false,
+      message: 'Email service error'
+    }
+  }
 }
