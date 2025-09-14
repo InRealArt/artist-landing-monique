@@ -64,7 +64,7 @@ export async function POST(request: NextRequest) {
     };
 
     // Check if PDF file exists
-    const pdfPath = path.join(process.cwd(), 'public', 'Catalogue.pdf');
+    const pdfPath = path.join(process.cwd(), 'public', 'catalogue.pdf');
     console.log('📁 PDF Path:', pdfPath);
     console.log('📁 File exists:', fs.existsSync(pdfPath));
     
@@ -130,7 +130,7 @@ export async function POST(request: NextRequest) {
       `,
       attachments: [
         {
-          filename: 'Catalogue.pdf',
+          filename: 'catalogue.pdf',
           path: pdfPath
         }
       ]
