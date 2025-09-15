@@ -51,7 +51,7 @@ export const defaultArtistData: ArtistData = {
 Place your images in the `/public/images/` directory:
 - `artist.png` - Artist profile photo
 - `artist-background.png` - Hero section background image
-- `artwork-1.jpg`, `artwork-2.jpg`, etc. - Artwork images
+- `artwork-1.webp`, `artwork-2.webp`, etc. - Artwork images
 
 ### 3. Update Artwork Data
 
@@ -65,7 +65,7 @@ artworks: [
     year: 2024,
     medium: "Oil on Canvas",
     dimensions: "60cm x 80cm",
-    image: "/images/artwork-1.jpg",
+    image: "/images/art3f/laville/artwork-1.webp",
     description: "Artwork description...",
     price: "€2,500",
     available: true,

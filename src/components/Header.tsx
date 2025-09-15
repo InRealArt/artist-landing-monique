@@ -42,7 +42,7 @@ export default function Header({ artistData: _artistData }: HeaderProps) {
           <div className="flex items-center">
             <div className="flex items-center">
               <Image
-                src="/images/Logo.png"
+                src="/images/Logo.webp"
                 alt="IRA Logo"
                 width={120}
                 height={40}

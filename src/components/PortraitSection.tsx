@@ -17,7 +17,7 @@ export default function PortraitSection({ artistData }: PortraitSectionProps) {
           <div className="flex justify-center h-full">
             <div className="relative w-full max-w-md h-full">
               <Image
-                src="/images/artist-2.png"
+                src="/images/art3f/laville/artwork-1.webp"
                 alt="Portrait de Monique Laville"
                 fill
                 className="object-cover rounded-lg shadow-lg"
