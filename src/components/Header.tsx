@@ -45,9 +45,6 @@ export default function Header({ artistData: _artistData }: HeaderProps) {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            <a href="https://www.biancoscuro.it/site?mailpoet_router&endpoint=track&action=click&data=WyI5MDM4IiwiZjA3ZGFhIiwiMTYxMyIsIjI4OGYyMTViNDhkZSIsZmFsc2Vd" className="text-gray-700 hover:text-purple-600 transition-colors font-montserrat">
-              Exposition
-            </a>
             <a target="_blank" href="https://www.inrealart.com/artists/monique-laville" className="text-gray-700 hover:text-purple-600 transition-colors font-montserrat">
               Artiste
             </a>
