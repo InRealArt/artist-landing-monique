@@ -9,7 +9,7 @@ interface AboutSectionProps {
 
 export default function AboutSection({ artistData }: AboutSectionProps) {
   return (
-    <section className="py-12 md:py-20 px-4 bg-gray-50">
+    <section className="py-12 md:py-20 px-4 bg-gray-50" id="aboutArtist">
       <div className="max-w-[80%] md:max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 items-start">
           {/* Left Section - Artist Information */}
